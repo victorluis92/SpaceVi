@@ -21,7 +21,8 @@ class PantallaDatosarrendador : AppCompatActivity() {
 
             val nombre:String=campoNombre.text.toString()
             val apellido:String=campoApellido.text.toString()
-            val telefono:Int=campoTelefono.text.toString().toInt()
+            val telefono:String=campoTelefono.text.toString()
+          //  val telefono:Int=campoTelefono.text.toString().toInt()
 
 
             saveFirestore(nombre,apellido,telefono)
@@ -29,17 +30,17 @@ class PantallaDatosarrendador : AppCompatActivity() {
     }
 
 
-    fun saveFirestore(nombre:String, apellido:String, telefono: Int){
+    fun saveFirestore(nombre:String, apellido:String, telefono: String){
         val db= FirebaseFirestore.getInstance()
         val user:MutableMap<String,Any> =HashMap()
         user["nombre"]=nombre
         user["apellido"]=apellido
         user["telefono"]=telefono
 
-        db.collection("usuarios")
+        db.collection("clientes")
             .add(user)
             .addOnSuccessListener{
-                Toast.makeText(this@PantallaDatosarrendador, "exito", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@PantallaDatosarrendador, "Registro Exitoso", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener{
                 Toast.makeText(this@PantallaDatosarrendador, "no hay exito", Toast.LENGTH_LONG).show()
