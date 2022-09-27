@@ -6,19 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".PantallaDatosarrendador">
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre:"
@@ -42,7 +31,7 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Telefono:"
@@ -58,6 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Datos del arrendatario"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +56,7 @@
         app:layout_constraintVertical_bias="0.127" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textdatoscasaaa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Que tipo de alojamiento vas a compartir?"
@@ -75,7 +66,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtNombre"
+        android:id="@+id/txtApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -101,7 +92,7 @@
         app:layout_constraintVertical_bias="0.387" />
 
     <EditText
-        android:id="@+id/txtID"
+        android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -112,5 +103,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.198" />
+
+    <Button
+        android:id="@+id/btnSiguienteDatosCasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

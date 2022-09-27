@@ -1,50 +1,41 @@
 package com.example.spacevi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import com.google.firebase.firestore.FirebaseFirestore
 
 class PantallaDatosarrendador : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_datosarrendador)
-        val btnGuardar: Button =findViewById(R.id.btnGuardar)
-
-        btnGuardar.setOnClickListener{
-
-            val campoNombre: EditText =findViewById(R.id.txtID)
-            val campoApellido: EditText =findViewById(R.id.txtNombre)
-            val campoTelefono: EditText =findViewById(R.id.txtTelefono)
-
-            val nombre:String=campoNombre.text.toString()
-            val apellido:String=campoApellido.text.toString()
-            val telefono:String=campoTelefono.text.toString()
-          //  val telefono:Int=campoTelefono.text.toString().toInt()
 
 
-            saveFirestore(nombre,apellido,telefono)
+        val btnSiguienteDatosCasa: Button =findViewById(R.id.btnSiguienteDatosCasa)
+        val txtNombre=findViewById<EditText>(R.id.txtNombre)
+        val txApellido=findViewById<EditText>(R.id.txtApellido)
+        val txtTelefono=findViewById<EditText>(R.id.txtTelefono)
+
+
+
+        btnSiguienteDatosCasa.setOnClickListener {
+
+            val lanzar= Intent(this,PantallaDatoCasa::class.java)
+            lanzar.putExtra("Datos",txtNombre.text.toString())
+            lanzar.putExtra("Apellido",txApellido.text.toString())
+            lanzar.putExtra("Telefono",txtTelefono.text.toString())
+
+
+            startActivity(lanzar)
+
+
+
         }
+
     }
 
 
-    fun saveFirestore(nombre:String, apellido:String, telefono: String){
-        val db= FirebaseFirestore.getInstance()
-        val user:MutableMap<String,Any> =HashMap()
-        user["nombre"]=nombre
-        user["apellido"]=apellido
-        user["telefono"]=telefono
-
-        db.collection("clientes")
-            .add(user)
-            .addOnSuccessListener{
-                Toast.makeText(this@PantallaDatosarrendador, "Registro Exitoso", Toast.LENGTH_LONG).show()
-            }
-            .addOnFailureListener{
-                Toast.makeText(this@PantallaDatosarrendador, "no hay exito", Toast.LENGTH_LONG).show()
-
-            }
-    }
 }
