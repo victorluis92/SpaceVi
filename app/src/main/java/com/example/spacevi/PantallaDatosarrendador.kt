@@ -15,6 +15,10 @@ class PantallaDatosarrendador : AppCompatActivity() {
 
 
         val btnSiguienteDatosCasa: Button =findViewById(R.id.btnSiguienteDatosCasa)
+        val btnSiguienteDatosDepartamento: Button =findViewById(R.id.btnSiguienteDatosDepartamento)
+        val btnSiguienteDatosCuarto: Button =findViewById(R.id.btnSiguienteDatosCuarto)
+
+
         val txtNombre=findViewById<EditText>(R.id.txtNombre)
         val txApellido=findViewById<EditText>(R.id.txtApellido)
         val txtTelefono=findViewById<EditText>(R.id.txtTelefono)
@@ -22,18 +26,29 @@ class PantallaDatosarrendador : AppCompatActivity() {
 
 
         btnSiguienteDatosCasa.setOnClickListener {
-
             val lanzar= Intent(this,PantallaDatoCasa::class.java)
             lanzar.putExtra("Datos",txtNombre.text.toString())
             lanzar.putExtra("Apellido",txApellido.text.toString())
             lanzar.putExtra("Telefono",txtTelefono.text.toString())
-
-
             startActivity(lanzar)
-
-
-
+ }
+        btnSiguienteDatosDepartamento.setOnClickListener {
+            val lanzar= Intent(this,PantallaDatoDepartamento::class.java)
+            lanzar.putExtra("Datos",txtNombre.text.toString())
+            lanzar.putExtra("Apellido",txApellido.text.toString())
+            lanzar.putExtra("Telefono",txtTelefono.text.toString())
+            startActivity(lanzar)
         }
+        btnSiguienteDatosCuarto.setOnClickListener {
+            val lanzar= Intent(this,PantallaDatoCuarto::class.java)
+            lanzar.putExtra("Datos",txtNombre.text.toString())
+            lanzar.putExtra("Apellido",txApellido.text.toString())
+            lanzar.putExtra("Telefono",txtTelefono.text.toString())
+            startActivity(lanzar)
+        }
+
+
+
 
     }
 

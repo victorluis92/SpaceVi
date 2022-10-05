@@ -8,10 +8,10 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
-class PantallaDatoCasa : AppCompatActivity() {
+class PantallaDatoDepartamento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_datoscasa)
+        setContentView(R.layout.activity_pantalla_datos_departamento)
         val btnGuardar: Button =findViewById(R.id.boton)
 
      btnGuardar.setOnClickListener{
@@ -68,10 +68,10 @@ class PantallaDatoCasa : AppCompatActivity() {
        db.collection("clientes")
             .add(user)
             .addOnSuccessListener{
-                Toast.makeText(this@PantallaDatoCasa, "Registro Exitoso", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@PantallaDatoDepartamento, "Registro Exitoso", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener{
-                Toast.makeText(this@PantallaDatoCasa, "no hay exito", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@PantallaDatoDepartamento, "no hay exito", Toast.LENGTH_LONG).show()
 
             }
     }

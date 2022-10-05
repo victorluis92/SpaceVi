@@ -12,8 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceVi"
         tools:targetApi="31">
+
+        <activity
+            android:name=".PantallaDatoCuarto"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".PantallaDatoCasa"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PantallaDatoDepartamento"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
